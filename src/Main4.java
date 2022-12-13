@@ -28,9 +28,7 @@ Write a program, test using stdin → stdout
 
  */
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main4 {
     public static void main(String[] args) {
@@ -41,12 +39,11 @@ public class Main4 {
         while (scanner.hasNext()) {
             int temp = scanner.nextInt();
             if (temp != 0) {
-                list.add(scanner.nextInt());
+                list.add(temp);
             } else {
-                System.out.println(list);
+                System.out.println(list.stream().mapToInt(i -> i).average().orElse(0));
                 break;
             }
         }
-
     }
 }
